@@ -5,3 +5,4 @@ requests
 cloudinary
 pymongo
 gunicorn
+python-dotenv
