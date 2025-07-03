@@ -1,0 +1,7 @@
+flask
+qrcode
+pillow
+requests
+cloudinary
+pymongo
+gunicorn

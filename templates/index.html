@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>QR Code Generator (Cloudinary + MongoDB)</h1>
+    <form method="post">
+        <input type="text" name="link" placeholder="Enter a URL" required><br>
+        <input type="text" name="title" placeholder="Enter Title (optional)"><br>
+        <input type="text" name="name" placeholder="Enter Name (optional)"><br>
+        <button type="submit">Generate</button>
+    </form>
+    {% if error %}
+        <p style="color:red;"><strong>{{ error }}</strong></p>
+    {% endif %}
+    {% if cloudinary_url %}
+        <p><strong>✅ QR Code Uploaded:</strong></p>
+        <img src="{{ cloudinary_url }}" alt="QR Code" style="max-width:300px;"><br>
+        <a href="{{ cloudinary_url }}" download><button>Download QR</button></a>
+    {% endif %}
+</body>
+</html>
